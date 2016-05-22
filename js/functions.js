@@ -1,5 +1,6 @@
 $(document).ready(function() 
 {
+    
 	$(".role").click(function() 
 	{
 		if($(this).css('textDecoration') == 'line-through')
