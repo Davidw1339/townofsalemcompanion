@@ -2,6 +2,14 @@ $(document).ready(function()
 {
 	$(".role").click(function() 
 	{
-		$(this).css('textDecoration', 'line-through');
+		if($(this).css('textDecoration') == 'line-through')
+		{
+			$(this).css('textDecoration', 'none');
+		}
+		else
+		{
+			$(this).css('textDecoration', 'line-through');
+		}
+		
 	});
 });
