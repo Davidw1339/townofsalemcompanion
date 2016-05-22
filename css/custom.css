@@ -11,13 +11,17 @@
     margin-top:105px;
 }
 
+#title{
+    font-size:.9em;
+}
+
 #body{
     font-size:40px;
     font-weight:bold;
 }
 
 #roles{
-    font-size: 30px;
+    font-size: .6em;
     text-align:center;
     font-weight:normal;
 }
