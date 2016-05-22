@@ -5,18 +5,19 @@
 .navbar-brand{
     font-size:20px;
 }
+
 #main{
     text-align:center;
     margin-top:105px;
 }
 
 #body{
-    font-size:35px;
+    font-size:40px;
     font-weight:bold;
 }
 
 #roles{
-    list-style-type:none;
+    font-size: 30px;
     text-align:center;
     font-weight:normal;
 }
