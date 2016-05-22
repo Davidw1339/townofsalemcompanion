@@ -1,5 +1,7 @@
-$(".role").click(function() 
+$(document).ready(function() 
 {
-	alert("clicked");
-	this.wrap("<strike>");
+	$(".role").click(function() 
+	{
+		$(this).css('textDecoration', 'line-through');
+	});
 });
