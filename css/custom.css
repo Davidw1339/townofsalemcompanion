@@ -34,3 +34,7 @@
 	list-style-type: none;
 	font-size: .5em;
 }
+
+.filteredrole{
+	cursor: pointer;
+}
