@@ -25,3 +25,7 @@
     text-align:center;
     font-weight:normal;
 }
+
+.role{
+	cursor: pointer;
+}
