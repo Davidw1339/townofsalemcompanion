@@ -29,3 +29,8 @@
 .role{
 	cursor: pointer;
 }
+
+.filterrolelist{
+	list-style-type: none;
+	font-size: .5em;
+}
