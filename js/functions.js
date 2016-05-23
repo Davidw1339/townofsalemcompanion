@@ -276,6 +276,56 @@ $(document).ready(function()
 		if($(this).css('textDecoration') == 'line-through')
 		{
 			$(this).css('textDecoration', 'none');
+            
+            switch($(this).text()){
+                case "Jailor":
+                    jailor = false;
+                    break;
+                case "Town Investigative":
+                    if($(this).attr("id") == "towninvest"){
+                        towninvest = false;
+                    } else if($(this).attr("id") == "towninvest1"){
+                        towninvest1 = false;
+                    }
+                    break;
+                case "Town Support":
+                    if($(this).attr("id") == "townsupport"){
+                        townsupport = false;
+                    } else if($(this).attr("id") == "townsupport1"){
+                        townsupport1 = false;
+                    }
+                    break;
+                case "Town Protective":
+                    townprotect = false;
+                    break;
+                case "Town Killing":
+                    townkill = false;
+                    break;
+                case "Random Town":
+                    randomtown = false;
+                    break;
+                case "Godfather":
+                    godfather = false;
+                    break;
+                case "Mafioso":
+                    mafioso = false;
+                    break;
+                case "Random Mafia":
+                    randommaf = false;
+                    break;
+                case "Neutral Killing":
+                    neutralkill = false;
+                    break;
+                case "Neutral Evil":
+                    neutralevil = false;
+                    break;
+                case "Neutral Benign":
+                    neutralbenign = false;
+                    break;
+                case "Any":
+                    any = false;
+                    break;
+            }
 		}
 		else
 		{
