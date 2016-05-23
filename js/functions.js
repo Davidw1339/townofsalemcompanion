@@ -340,5 +340,15 @@ $(document).ready(function()
 		var roles = getFilteredRoles(text);
 		updateFilteredList(roles);
 	});
+
+    $("#filter").keypress(function(event) //detect enter and use it to cross off elements
+    {
+        if(event.which == 13)
+        {
+            //submit on the first element
+            $(".filteredrole").first().trigger("click");
+        }
+    });
+
     
 });
