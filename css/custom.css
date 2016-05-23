@@ -24,6 +24,10 @@ html{
     font-weight:bold;
 }
 
+p{
+    font-size: 1.3em;
+}
+
 #roles{
     font-size: 1.5em;
     text-align:center;
