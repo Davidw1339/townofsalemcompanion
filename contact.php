@@ -23,7 +23,7 @@
             
             Comment: ".$_POST["comment"])){
                 $result="<div class='alert alert-success'><strong>Thank you! Your message was successfully sent.
-                I will be in touch.</strong></div>";
+                We will be in touch.</strong></div>";
             } else {
                 $result="<div class='alert alert-danger'><strong>There was an error sending your message.
                 Please try again later.</strong></div>";
@@ -34,7 +34,7 @@
             
             Comment: ".$_POST["comment"])){
                 $result="<div class='alert alert-success'><strong>Thank you! Your message was successfully sent.
-                I will be in touch.</strong></div>";
+                We will be in touch.</strong></div>";
             } else {
                 $result="<div class='alert alert-danger'><strong>There was an error sending your message.
                 Please try again later.</strong></div>";
