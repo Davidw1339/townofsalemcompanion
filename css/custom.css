@@ -1,3 +1,7 @@
+html{
+    overflow-y: scroll;
+}
+
 .navbar{
     border-radius:0;   
 }
@@ -8,20 +12,20 @@
 
 #main{
     text-align:center;
-    margin-top:105px;
+    margin-top:60px;
 }
 
-#title{
-    font-size:.9em;
+.title{
+    font-size: 2.2em;
 }
 
 #body{
-    font-size:40px;
+    font-size: 1em;
     font-weight:bold;
 }
 
 #roles{
-    font-size: .6em;
+    font-size: 1.5em;
     text-align:center;
     font-weight:normal;
 }
@@ -32,7 +36,7 @@
 
 .filterrolelist{
 	list-style-type: none;
-	font-size: .5em;
+	font-size: 1.5em;
 }
 
 .filteredrole{
