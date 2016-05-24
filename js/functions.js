@@ -112,15 +112,15 @@ var any = false;
 
 function getFilteredRoles(text)
 {
-	var matches = [];
-	roles.forEach(function(role) //for each to check every role with the filtered text
-	{
-		if(role.toLowerCase().indexOf(text.toLowerCase()) > -1) //check if there are matches (case insensitive)
-		{
-			matches.push(role);
-		}
-	});
-	return matches;
+    var matches = [];
+    roles.forEach(function(role) //for each to check every role with the filtered text
+    {
+        if(role.toLowerCase().indexOf(text.toLowerCase()) > -1) //check if there are matches (case insensitive)
+        {
+            matches.push(role);
+        }
+    });
+    return matches;
 }
 
 function strikeThrough(target){
@@ -135,11 +135,11 @@ function strikeThrough(target){
 
 function updateFilteredList(matches) //makes change to list of roles to click on
 {
-	$("#rolelist").empty();
-	matches.forEach(function(role)
-	{
-		$("#rolelist").append("<span class = 'filteredrole'>" + role + "</span><br>");
-	});
+    $("#rolelist").empty();
+    matches.forEach(function(role)
+    {
+        $("#rolelist").append("<span class = 'filteredrole'>" + role + "</span><br>");
+    });
     
     $(".filteredrole").click(function(){
         var text = $(this).text();
@@ -271,75 +271,82 @@ function updateFilteredList(matches) //makes change to list of roles to click on
 $(document).ready(function() 
 {
     updateFilteredList(roles);
-	$(".role").click(function() 
-	{
-		if($(this).css('textDecoration') == 'line-through')
-		{
-			$(this).css('textDecoration', 'none');
-            
-            switch($(this).text()){
-                case "Jailor":
-                    jailor = false;
-                    break;
-                case "Town Investigative":
-                    if($(this).attr("id") == "towninvest"){
-                        towninvest = false;
-                    } else if($(this).attr("id") == "towninvest1"){
-                        towninvest1 = false;
-                    }
-                    break;
-                case "Town Support":
-                    if($(this).attr("id") == "townsupport"){
-                        townsupport = false;
-                    } else if($(this).attr("id") == "townsupport1"){
-                        townsupport1 = false;
-                    }
-                    break;
-                case "Town Protective":
-                    townprotect = false;
-                    break;
-                case "Town Killing":
-                    townkill = false;
-                    break;
-                case "Random Town":
-                    randomtown = false;
-                    break;
-                case "Godfather":
-                    godfather = false;
-                    break;
-                case "Mafioso":
-                    mafioso = false;
-                    break;
-                case "Random Mafia":
-                    randommaf = false;
-                    break;
-                case "Neutral Killing":
-                    neutralkill = false;
-                    break;
-                case "Neutral Evil":
-                    neutralevil = false;
-                    break;
-                case "Neutral Benign":
-                    neutralbenign = false;
-                    break;
-                case "Any":
-                    any = false;
-                    break;
+    $(".role").mousedown(function(event) 
+    {
+        if(event.which == 1)
+        {
+            if($(this).css('textDecoration') == 'line-through')
+            {
+                $(this).css('textDecoration', 'none');
+                
+                switch($(this).text()){
+                    case "Jailor":
+                        jailor = false;
+                        break;
+                    case "Town Investigative":
+                        if($(this).attr("id") == "towninvest"){
+                            towninvest = false;
+                        } else if($(this).attr("id") == "towninvest1"){
+                            towninvest1 = false;
+                        }
+                        break;
+                    case "Town Support":
+                        if($(this).attr("id") == "townsupport"){
+                            townsupport = false;
+                        } else if($(this).attr("id") == "townsupport1"){
+                            townsupport1 = false;
+                        }
+                        break;
+                    case "Town Protective":
+                        townprotect = false;
+                        break;
+                    case "Town Killing":
+                        townkill = false;
+                        break;
+                    case "Random Town":
+                        randomtown = false;
+                        break;
+                    case "Godfather":
+                        godfather = false;
+                        break;
+                    case "Mafioso":
+                        mafioso = false;
+                        break;
+                    case "Random Mafia":
+                        randommaf = false;
+                        break;
+                    case "Neutral Killing":
+                        neutralkill = false;
+                        break;
+                    case "Neutral Evil":
+                        neutralevil = false;
+                        break;
+                    case "Neutral Benign":
+                        neutralbenign = false;
+                        break;
+                    case "Any":
+                        any = false;
+                        break;
+                }
             }
-		}
-		else
-		{
-			$(this).css('textDecoration', 'line-through');
-		}
-		
-	});
+            else
+            {
+                $(this).css('textDecoration', 'line-through');
+            }
+        }
+        else if(event.which == 3)
+        {
+            alert("HEYOOO");
+        }
+        
+    });
 
-	$("#filter").on('input', function() //check for changes in filter
-	{
-		var text = $(this).val();
-		var roles = getFilteredRoles(text);
-		updateFilteredList(roles);
-	});
+    $("#filter").on('input', function() //check for changes in filter
+    {
+        var text = $(this).val();
+        var roles = getFilteredRoles(text);
+        updateFilteredList(roles);
+    });
 
     $("#filter").keypress(function(event) //detect enter and use it to cross off elements
     {
@@ -349,6 +356,10 @@ $(document).ready(function()
             $(".filteredrole").first().trigger("click");
         }
     });
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+
 
     
 });
