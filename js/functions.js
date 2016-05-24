@@ -337,7 +337,13 @@ $(document).ready(function()
         else if(event.which == 3)
         {
             // window.prompt("Create Note","type here")
-            $(this).attr('title', 'test1test1test22');
+            var origTooltip = $(this).attr('data-original-title');
+            console.log(origTooltip);
+            $(this).tooltip('hide')
+                   .attr('data-original-title', window.prompt("Create Note", origTooltip))
+                   .tooltip('fixTitle')
+                   .tooltip('show');
+            
         }
         
     });
