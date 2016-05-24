@@ -93,6 +93,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="rankedpractice.html">Ranked Practice</a></li>
                         <li class="active"><a href="contact.php">Contact Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>    
                     </ul>
                 </div>
             </div>
