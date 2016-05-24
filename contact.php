@@ -101,7 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="center col-md-12 emailf">
-                    <h1>Our  Contact Form</h1>
+                    <h1>Our Contact Form</h1>
                     
                     <?php
                         echo $result;
