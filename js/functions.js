@@ -336,7 +336,8 @@ $(document).ready(function()
         }
         else if(event.which == 3)
         {
-            alert("HEYOOO");
+            // window.prompt("Create Note","type here")
+            $(this).attr('title', 'test1test1test22');
         }
         
     });
