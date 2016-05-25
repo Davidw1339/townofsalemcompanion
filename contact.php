@@ -17,7 +17,7 @@
             $result="<div class='alert alert-danger'><strong>There were error(s) with your form:</strong> $error</div>";
         }   
         else{
-            if(mail("davidw1339@gmail.com", "Comment From Town of Salem Companion", "Name: ".$_POST["name"]."
+            if(mail("contact@salemcompanion.com", "Comment From Town of Salem Companion", "Name: ".$_POST["name"]."
             
             Email: ".$_POST["email"]."
             
@@ -46,7 +46,6 @@
         <link href="css/custom.css" rel="stylesheet">
         
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
  
         <script src="js/bootstrap.min.js"></script>
 
@@ -56,7 +55,7 @@
         <style>
             .center{
                 text-align:center;
-                margin-top:105px;
+                margin-top:60px;
             }
             
             .emailf{
@@ -110,7 +109,7 @@
                         echo $result;
                     ?>
                     
-                    </p class="lead">Send me anything and then we can get in touch.</p>
+                    </p class="lead">Send us anything and then we can get in touch.</p>
                     <form method="post">
                         <div class="form-group">
                             <label for="name">Your Name:</label>

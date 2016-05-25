@@ -24,6 +24,10 @@ html{
     font-weight:bold;
 }
 
+.btcadd{
+    word-wrap: break-word;
+}
+
 p{
     font-size: 1.3em;
 }
