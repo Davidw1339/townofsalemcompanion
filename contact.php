@@ -59,6 +59,8 @@
           ga('send', 'pageview');
 
         </script>
+        
+        <div align="center">
 
         <script src="js/functions.js"></script>
                 
@@ -142,4 +144,20 @@
             </div>
         </div>
     </body>
+    
+    <div align="center">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Salem Companion -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2083646110024144"
+         data-ad-slot="1395350112"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+    </div>
+    
 </html>
