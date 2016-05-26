@@ -61,8 +61,6 @@
           ga('send', 'pageview');
 
         </script>
-        
-        <div align="center">
 
         <script src="js/functions.js"></script>
                 
