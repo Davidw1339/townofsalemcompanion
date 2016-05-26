@@ -1,0 +1,20 @@
+{
+    "roles": [
+        {"role":"Investigator", "alignment":"Town Investigative", "abilities":"Investigate one person each night for a clue to their role."},
+        {"role":"Lookout", "alignment":"Town Investigative", "abilities":"Watch one person at night to see who visits them."},
+        {"role":"Sheriff", "alignment":"Town Investigative", "abilities":"Check one person each night for suspicious activity."},
+        {"role":"Spy", "alignment":"Town Investigative", "abilities":"Listen in on the Mafia at night, and hear whispers."},
+        {"role":"Jailor", "alignment":"Town Killing", "abilities":"You may choose one person during the day to jail for the night."},
+        {"role":"Vampire Hunter", "alignment":"Town Killing", "abilities":"Check for Vampires each night."},
+        {"role":"Veteran", "alignment":"Town Killing", "abilities":"Decide if you will go on alert and kill anyone who visits you."},
+        {"role":"Vigilante", "alignment":"Town Killing", "abilities":"Choose to take justice into your own hands and shoot someone."},
+        {"role":"Bodyguard", "alignment":"Town Protective", "abilities":"Protect one person from death each night."},
+        {"role":"Doctor", "alignment":"Town Protective", "abilities":"Heal one person each night, preventing them from dying."},
+        {"role":"Escort", "alignment":"Town Support", "abilities":"Distract someone each night."},
+        {"role":"Mayor", "alignment":"Town Support", "abilities":"Gain 3 votes when you reveal yourself as Mayor."},
+        {"role":"Medium", "alignment":"Town Support", "abilities":"Speak with all dead people at night."},
+        {"role":"Retributionist", "alignment":"Town Support", "abilities":"You may revive a dead town member."},
+        {"role":"Transporter", "alignment":"Town Support", "abilities":"Choose two people to transport at night."},
+        {"role":"Amnesiac", "alignment":"Neutral Benign", "abilities":"Remember who you were by selecting a graveyard role."}
+    ]
+}
