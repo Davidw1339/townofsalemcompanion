@@ -110,6 +110,15 @@ var neutralevil = false;
 var neutralbenign = false;
 var any = false;
 
+var mayor = false;
+var mayorPosition = -1;
+var retributionist = false;
+var retriPosition = -1;
+var werewolf = false;
+var werewolfPosition = -1; 
+var veteran = false;
+var veteranPosition = -1;
+
 function getFilteredRoles(text)
 {
     var matches = [];
@@ -148,15 +157,6 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             if(!jailor){
                 target = "Jailor";
                 jailor = true;
-            } else if(!townkill){
-                target = "Town Killing";
-                townkill = true;
-            } else if(!randomtown){
-                target = "Random Town";
-                randomtown = true;
-            } else if(!any){
-                target = "Any";
-                any = true;
             }
             strikeThrough(target);
         } else if($.inArray(text, TownInvest) > -1){
@@ -175,7 +175,69 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             }
             strikeThrough(target);
         } else if($.inArray(text, TownSupport) > -1){
-            if(!townsupport){
+            if(text == "Mayor")
+            {
+                if(!mayor)
+                {
+                    if(!townsupport)
+                    {
+                        mayor = true;
+                        mayorPosition = 0;
+                        target = "Town Support";
+                        townsupport = true;
+                    }
+                    else if(!townsupport1)
+                    {
+                        mayor = true;
+                        mayorPosition = 1;
+                        target = "Town Support";
+                        townsupport1 = true;
+                    }
+                    else if(!any)
+                    {
+                        mayor = true;
+                        mayorPosition = 2;
+                        target = "Any";
+                        any = true;
+                    }
+                }
+                else
+                {
+                    alert("Mayor is a unique role");
+                }
+            }
+            else if(text == "Retributionist")
+            {
+                if(!retributionist)
+                {
+                    if(!townsupport)
+                    {
+                        retributionist = true;
+                        retriPosition = 0;
+                        target = "Town Support";
+                        townsupport = true;
+                    }
+                    else if(!townsupport1)
+                    {
+                        retributionist = true;
+                        retriPosition = 1;
+                        target = "Town Support";
+                        townsupport1 = true;
+                    }
+                    else if(!any)
+                    {
+                        retributionist = true;
+                        retriPosition = 2;
+                        target = "Any";
+                        any = true;
+                    }
+                }
+                else
+                {
+                    alert("Retributionist is a unique role");
+                }
+            }
+            else if(!townsupport){
                 target = "Town Support";
                 townsupport = true;
             } else if(!townsupport1){
@@ -202,7 +264,27 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             }
             strikeThrough(target);
         } else if($.inArray(text, TownKilling) > -1){
-            if(!townkill){
+            if(text == "Veteran")
+            {
+                if(!veteran)
+                {
+                    if(!townkill)
+                    {
+                        veteran = true;
+                        veteranPosition = 0;
+                        target = "Town Killing";
+                        townkill = true;
+                    }
+                    else if(!any)
+                    {
+                        veteran = true;
+                        veteranPosition = 1;
+                        target = "Any";
+                        any = true;
+                    }
+                }
+            }
+            else if(!townkill){
                 target = "Town Killing";
                 townkill = true;
             } else if(!randomtown){
@@ -235,7 +317,28 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             }
             strikeThrough(target);
         } else if($.inArray(text, NeutralKilling) > -1){
-            if(!neutralkill){
+            if(text == "Werewolf")
+            {
+                console.log(werewolf);
+                if(!werewolf)
+                {
+                    if(!neutralkill)
+                    {
+                        werewolf = true;
+                        werewolfPosition = 0;
+                        target = "Neutral Killing";
+                        neutralkill = true;
+                    }
+                    else if(!any)
+                    {
+                        werewolf = true;
+                        werewolfPosition = 1;
+                        target = "Any";
+                        any = true;
+                    }
+                }
+            }
+            else if(!neutralkill){
                 target = "Neutral Killing";
                 neutralkill = true;
             } else if(!any){
@@ -293,8 +396,28 @@ $(document).ready(function()
                     case "Town Support":
                         if($(this).attr("id") == "townsupport"){
                             townsupport = false;
+                            if(mayor && mayorPosition == 0)
+                            {
+                                mayor = false;
+                                mayorPosition = -1;
+                            }
+                            else if(retributionist && retriPosition == 0)
+                            {
+                                retributionist = false;
+                                retriPosition = -1;
+                            }
                         } else if($(this).attr("id") == "townsupport1"){
                             townsupport1 = false;
+                            if(mayor && mayorPosition == 1)
+                            {
+                                mayor = false;
+                                mayorPosition = -1;
+                            }
+                            else if(retributionist && retriPosition == 1)
+                            {
+                                retributionist = false;
+                                retriPosition = -1;
+                            }
                         }
                         break;
                     case "Town Protective":
@@ -302,6 +425,11 @@ $(document).ready(function()
                         break;
                     case "Town Killing":
                         townkill = false;
+                        if(veteran && veteranPosition == 0)
+                        {
+                            veteran = false;
+                            veteranPosition = -1;
+                        }
                         break;
                     case "Random Town":
                         randomtown = false;
@@ -317,6 +445,11 @@ $(document).ready(function()
                         break;
                     case "Neutral Killing":
                         neutralkill = false;
+                        if(werewolf && werewolfPosition == 0)
+                        {
+                            werewolf = false;
+                            werewolfPosition = -1;
+                        }
                         break;
                     case "Neutral Evil":
                         neutralevil = false;
@@ -326,6 +459,26 @@ $(document).ready(function()
                         break;
                     case "Any":
                         any = false;
+                        if(veteran && veteranPosition == 1)
+                        {
+                            veteran = false;
+                            veteranPosition = -1;
+                        }
+                        else if(mayor && mayorPosition == 2)
+                        {
+                            mayor = false;
+                            mayorPosition = -1;
+                        }
+                        else if(retributionist && retriPosition == 2)
+                        {
+                            retributionist = false;
+                            retriPosition = -1;
+                        }
+                        else if(werewolf && werewolfPosition == 1)
+                        {
+                            werewolf = false;
+                            werewolfPosition = -1;
+                        }
                         break;
                 }
             }
