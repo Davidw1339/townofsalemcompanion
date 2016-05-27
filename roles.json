@@ -1,20 +1,75 @@
-{
+{ 
     "roles": [
-        {"role":"Investigator", "alignment":"Town Investigative", "abilities":"Investigate one person each night for a clue to their role."},
-        {"role":"Lookout", "alignment":"Town Investigative", "abilities":"Watch one person at night to see who visits them."},
-        {"role":"Sheriff", "alignment":"Town Investigative", "abilities":"Check one person each night for suspicious activity."},
-        {"role":"Spy", "alignment":"Town Investigative", "abilities":"Listen in on the Mafia at night, and hear whispers."},
-        {"role":"Jailor", "alignment":"Town Killing", "abilities":"You may choose one person during the day to jail for the night."},
-        {"role":"Vampire Hunter", "alignment":"Town Killing", "abilities":"Check for Vampires each night."},
-        {"role":"Veteran", "alignment":"Town Killing", "abilities":"Decide if you will go on alert and kill anyone who visits you."},
-        {"role":"Vigilante", "alignment":"Town Killing", "abilities":"Choose to take justice into your own hands and shoot someone."},
-        {"role":"Bodyguard", "alignment":"Town Protective", "abilities":"Protect one person from death each night."},
-        {"role":"Doctor", "alignment":"Town Protective", "abilities":"Heal one person each night, preventing them from dying."},
-        {"role":"Escort", "alignment":"Town Support", "abilities":"Distract someone each night."},
-        {"role":"Mayor", "alignment":"Town Support", "abilities":"Gain 3 votes when you reveal yourself as Mayor."},
-        {"role":"Medium", "alignment":"Town Support", "abilities":"Speak with all dead people at night."},
-        {"role":"Retributionist", "alignment":"Town Support", "abilities":"You may revive a dead town member."},
-        {"role":"Transporter", "alignment":"Town Support", "abilities":"Choose two people to transport at night."},
-        {"role":"Amnesiac", "alignment":"Neutral Benign", "abilities":"Remember who you were by selecting a graveyard role."}
+        {"role":"Investigator", "alignment":"Town Investigative", "abilities":"Investigate one person each night for a clue to their role.", "attributes":[
+            {"attr": "None"}
+        ]},
+        {"role":"Lookout", "alignment":"Town Investigative", "abilities":"Watch one person at night to see who visits them.", "attributes":[
+            {"attr": "None"}
+        ]},
+        {"role":"Sheriff", "alignment":"Town Investigative", "abilities":"Check one person each night for suspicious activity.", "attributes":[
+            {"attr": "You will know if your target is a member of the Mafia, except for the Godfather."},
+            {"attr": "You will know if your target is a Serial Killer."}
+        ]},
+        {"role":"Spy", "alignment":"Town Investigative", "abilities":"Listen in on the Mafia at night, and hear whispers.", "attributes":[
+            {"attr": "You can hear private messages."},
+            {"attr": "You will know who the Mafia visit at night."}
+        ]},
+        {"role":"Jailor", "alignment":"Town Killing", "abilities":"You may choose one person during the day to jail for the night.", "attributes":[
+            {"attr": "You may anonymously talk with your prisoner."},
+            {"attr": "You can choose to execute your prisoner."},
+            {"attr": "The jailed target can't perform their night ability."},
+            {"attr":"While jailed the prisoner is safe from all attacks."}
+        ]},
+        {"role":"Vampire Hunter", "alignment":"Town Killing", "abilities":"Check for Vampires each night.", "attributes":[
+            {"attr": "If you find a Vampire you will stake them in the heart."},
+            {"attr": "If a Vampire visits you they will be staked."},
+            {"attr": "You can hear Vampires talk at night."},
+            {"attr":"If you kill all Vampires you will become a Vigilante."}
+        ]},
+        {"role":"Veteran", "alignment":"Town Killing", "abilities":"Decide if you will go on alert and kill anyone who visits you.", "attributes":[
+            {"attr": "While on alert you can not be killed at night."},
+            {"attr": "If anyone visits you while you are on alert they will be shot."},
+            {"attr": "You can only go on alert 3 times."},
+            {"attr": "You are immune to role blocks."}
+        ]},
+        {"role":"Vigilante", "alignment":"Town Killing", "abilities":"Choose to take justice into your own hands and shoot someone.", "attributes":[
+            {"attr": "If you shoot another Town member you will commit suicide over the guilt."},
+            {"attr": "You can only shoot your gun 3 times."}
+        ]},
+        {"role":"Bodyguard", "alignment":"Town Protective", "abilities":"Protect one person from death each night.", "attributes":[
+            {"attr":"If your target is attacked both you and your attacker will die instead."},
+            {"attr": "Your counterattack ignores night immunity."}
+        ]},
+        {"role":"Doctor", "alignment":"Town Protective", "abilities":"Heal one person each night, preventing them from dying.", "attributes":[
+            {"attr": "You may only heal yourself once."},
+            {"attr": "You will know if your target is attacked."}
+        ]},
+        {"role":"Escort", "alignment":"Town Support", "abilities":"Distract someone each night.", "attributes":[
+            {"attr": "Distraction blocks your target from using their role's night ability."},
+            {"attr": "You are immune to roleblocks."}
+        ]},
+        {"role":"Mayor", "alignment":"Town Support", "abilities":"Gain 3 votes when you reveal yourself as Mayor.", "attributes":[
+            {"attr": "Once you have revealed yourself as Mayor your vote counts as 3 votes."},
+            {"attr": "You may not be healed once you have revealed yourself."}
+        ]},
+        {"role":"Medium", "alignment":"Town Support", "abilities":"Speak with all dead people at night.", "attributes":[
+            {"attr": "You will speak to the dead anonymously each night you are alive."},
+            {"attr": "You may only speak to a living person once."}
+        ]},
+        {"role":"Retributionist", "alignment":"Town Support", "abilities":"You may revive a dead town member.", "attributes":[
+            {"attr": "You may only resurrect one person."}
+        ]},
+        {"role":"Transporter", "alignment":"Town Support", "abilities":"Choose two people to transport at night.", "attributes":[
+            {"attr": "Transporting two people swaps all targets against them."},
+            {"attr": "You may transport yourself."},
+            {"attr": "Your targets will know they were transported."}
+        ]},
+        {"role":"Amnesiac", "alignment":"Neutral Benign", "abilities":"Remember who you were by selecting a graveyard role.", "attributes":[
+            {"attr": "When you choose a role it will be revealed to the Town."},
+            {"attr": "You can't choose a unique role."}
+        ]},
+        {"role":"Survivor", "alignment":"Neutral Benign", "abilities":"Put on a bulletproof vest on at night, protecting you from attacks.", "attributes":[
+            {"attr": "You can only use the bulletproof vest 4 times."}
+        ]}
     ]
 }

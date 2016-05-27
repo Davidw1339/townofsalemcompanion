@@ -50,6 +50,21 @@ function getquestionfilteredrolez(text)
     return matches;
 }
 
+function ordinalSuffix(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return i + "st";
+    }
+    if (j == 2 && k != 12) {
+        return i + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return i + "rd";
+    }
+    return i + "th";
+}
+
 function updateQuestionFilteredList(matches) //makes change to list of rolez to click on
 {
     $("#questionrolelist").empty();
@@ -58,19 +73,85 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
         $("#questionrolelist").append("<span class = 'questionfilteredrole'>" + role + "</span><br>");
     });
     
+    $("#copyButton").click(function(){
+        var ques = $(".copyques").text();
+        
+        window.prompt("Press CTRL+C to copy, then press OK or Enter", ques);
+    });
+    
     $(".questionfilteredrole").click(function(){
         var foundRole = getObjects(rolesJSON, 'role', $(this).text());
-        $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
-        "Role Alignment/Category: " + foundRole[0].alignment + "<br>" + 
-        "Abilities: " + foundRole[0].abilities + "<br>" +
-        "Question: " + "<br>" +
-        "Answer: " + "<br>"
-        );
+        var attr = foundRole[0].attributes;
+        var attributes = "";
+        $.each(attr, function(index, value){
+            attributes += attr[index].attr + "<br>";
+        });
+        var abilities = foundRole[0].abilities;
+        var fac = Math.floor(Math.random() * 2) + 1;
+        if(fac == 1){
+            var wordsArray = abilities.split(' ');
+            var numberOfWords = wordsArray.length;
+            var random = Math.floor(Math.random() * numberOfWords) + 1;
+            if(random != numberOfWords && random != 1){
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is the " + ordinalSuffix(random) + " word of your ability?</span><br>" +
+                "Answer: " + wordsArray[random - 1] + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            } else if(random == numberOfWords){
+                var last = numberOfWords - 1;
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is the last word of your ability?</span><br>" +
+                "Answer: " + wordsArray[last] + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            } else {
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is the first word of your ability?</span><br>" +
+                "Answer: " + wordsArray[0] + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            }
+        } else {
+            var numberOfAttr = attr.length;
+            var random = Math.floor(Math.random() * numberOfAttr) + 1;
+            if(random != numberOfAttr && random != 1){
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is your " + ordinalSuffix(random) + " attribute?</span><br>" +
+                "Answer: " + attr[random - 1].attr + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            } else if(random == numberOfAttr){
+                var last = numberOfAttr - 1;
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is your last attribute?</span><br>" +
+                "Answer: " + attr[last].attr + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            } else {
+                $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Abilities: " + foundRole[0].abilities + "<br>" +
+                "Attributes: " + attributes +
+                "Question: <span class='copyques'>What is your first attribute?</span><br>" +
+                "Answer: " + attr[0].attr + "<br>" +
+                "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
+                );
+            }
+        }
         
         $("#generatedQuestion").modal("show");
         $("#questionfilter").val("");
         updateQuestionFilteredList(rolez);
-        console.log(foundRole[0].role);
     });
     
 }
