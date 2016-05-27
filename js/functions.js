@@ -193,10 +193,17 @@ function updateFilteredList(matches) //makes change to list of roles to click on
                         target = "Town Support";
                         townsupport1 = true;
                     }
-                    else if(!any)
+                    else if(!randomtown)
                     {
                         mayor = true;
                         mayorPosition = 2;
+                        target = "Random Town";
+                        randomtown = true;
+                    }
+                    else if(!any)
+                    {
+                        mayor = true;
+                        mayorPosition = 3;
                         target = "Any";
                         any = true;
                     }
@@ -224,10 +231,17 @@ function updateFilteredList(matches) //makes change to list of roles to click on
                         target = "Town Support";
                         townsupport1 = true;
                     }
-                    else if(!any)
+                    else if(!randomtown)
                     {
                         retributionist = true;
                         retriPosition = 2;
+                        target = "Random Town";
+                        randomtown = true;
+                    }
+                    else if(!any)
+                    {
+                        retributionist = true;
+                        retriPosition = 3;
                         target = "Any";
                         any = true;
                     }
@@ -275,10 +289,17 @@ function updateFilteredList(matches) //makes change to list of roles to click on
                         target = "Town Killing";
                         townkill = true;
                     }
-                    else if(!any)
+                    else if(!randomtown)
                     {
                         veteran = true;
                         veteranPosition = 1;
+                        target = "Random Town";
+                        randomtown = true;
+                    }
+                    else if(!any)
+                    {
+                        veteran = true;
+                        veteranPosition = 2;
                         target = "Any";
                         any = true;
                     }
@@ -433,6 +454,21 @@ $(document).ready(function()
                         break;
                     case "Random Town":
                         randomtown = false;
+                        if(veteran && veteranPosition == 1)
+                        {
+                            veteran = false;
+                            veteranPosition = -1;
+                        }
+                        else if(retributionist && retriPosition == 2)
+                        {
+                            retributionist = false;
+                            retriPosition = -1;
+                        }
+                        else if(mayor && mayorPosition == 2)
+                        {
+                            retributionist = false;
+                            retriPosition = -1;
+                        }
                         break;
                     case "Godfather":
                         godfather = false;
@@ -459,17 +495,17 @@ $(document).ready(function()
                         break;
                     case "Any":
                         any = false;
-                        if(veteran && veteranPosition == 1)
+                        if(veteran && veteranPosition == 2)
                         {
                             veteran = false;
                             veteranPosition = -1;
                         }
-                        else if(mayor && mayorPosition == 2)
+                        else if(mayor && mayorPosition == 3)
                         {
                             mayor = false;
                             mayorPosition = -1;
                         }
-                        else if(retributionist && retriPosition == 2)
+                        else if(retributionist && retriPosition == 3)
                         {
                             retributionist = false;
                             retriPosition = -1;
