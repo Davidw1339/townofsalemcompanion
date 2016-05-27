@@ -157,6 +157,8 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             if(!jailor){
                 target = "Jailor";
                 jailor = true;
+            } else {
+                alert("Jailor is a unique role.");
             }
             strikeThrough(target);
         } else if($.inArray(text, TownInvest) > -1){
