@@ -22,7 +22,7 @@ var questions = false;
 
 var allHidden = false;
 
-var rolezJSON;
+var rolesJSON;
 
 function getObjects(obj, key, val) {
     var objects = [];
@@ -59,7 +59,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
     });
     
     $(".questionfilteredrole").click(function(){
-        console.log(getObjects(rolezJSON, 'role', $(this).text()));
+        console.log(getObjects(rolesJSON, 'role', $(this).text()));
         $("#questionfilter").val("");
         updateQuestionFilteredList(rolez);
     });
@@ -71,8 +71,7 @@ $(document).ready(function(){
     updateQuestionFilteredList(rolez);
     
     $.getJSON('roles.json', function(data){
-        rolezJSON = data;
-        console.log(rolezJSON);
+        rolesJSON = data;
     });
     
     $("#extensionsSave").click(function(){

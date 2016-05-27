@@ -115,7 +115,7 @@ var mayorPosition = -1;
 var retributionist = false;
 var retriPosition = -1;
 var werewolf = false;
-var werewolfPosition = -1; 
+var werewolfPosition = -1;
 var veteran = false;
 var veteranPosition = -1;
 
@@ -303,6 +303,8 @@ function updateFilteredList(matches) //makes change to list of roles to click on
                         target = "Any";
                         any = true;
                     }
+                } else {
+                    alert("Veteran is a unique role.");
                 }
             }
             else if(!townkill){
@@ -357,6 +359,8 @@ function updateFilteredList(matches) //makes change to list of roles to click on
                         target = "Any";
                         any = true;
                     }
+                } else {
+                    alert("Werewolf is a unique role.");
                 }
             }
             else if(!neutralkill){
