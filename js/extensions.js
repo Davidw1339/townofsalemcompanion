@@ -59,9 +59,18 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
     });
     
     $(".questionfilteredrole").click(function(){
-        console.log(getObjects(rolesJSON, 'role', $(this).text()));
+        var foundRole = getObjects(rolesJSON, 'role', $(this).text());
+        $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+        "Role Alignment/Category: " + foundRole[0].alignment + "<br>" + 
+        "Abilities: " + foundRole[0].abilities + "<br>" +
+        "Question: " + "<br>" +
+        "Answer: " + "<br>"
+        );
+        
+        $("#generatedQuestion").modal("show");
         $("#questionfilter").val("");
         updateQuestionFilteredList(rolez);
+        console.log(foundRole[0].role);
     });
     
 }

@@ -59,6 +59,10 @@ p{
 	font-size: 1.5em;
 }
 
+#questions{
+    font-size: 1.35em;
+}
+
 .filteredrole, .questionfilteredrole{
 	cursor: pointer;
 }

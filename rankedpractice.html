@@ -55,7 +55,7 @@
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="privacypolicy.html">Privacy Policy</a></li>
                         <li>
-                            <button class="btn btn-primary navbar-right" data-toggle="modal" data-target="#settings">
+                            <button class="btn btn-primary navbar-right" data-toggle="modal" data-target="#settings" data-backdrop="static" data-keyboard="false">
                                 <span class="glyphicon glyphicon-cog"></span>
                             </button>
                         </li>
@@ -91,6 +91,11 @@
                 <div class="well well-sm col-md-4" id="questionGenDiv" style="visibility:hidden">
                     <span class="title">Question Generator</span>
                     <hr>
+                    <h3><strong>Generated Question:</strong></h3>
+                        <div id="questions">
+                        N/A
+                        </div>
+                    <hr>    
                     <input type = "text" class="form-control input-sm" name = "questionfilter" id = "questionfilter" placeholder="Filter roles">
                         <div id="questionrolelist" class="questionrolelist">
 
@@ -120,7 +125,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="checkbox">
-                            <label><input type="checkbox" value="" id="questionGenCheck" disabled>Question Generator (Currently Disabled)</label>
+                            <label><input type="checkbox" value="" id="questionGenCheck">Question Generator</label>
                         </div>
                     </div>
                     <div class="modal-footer">
