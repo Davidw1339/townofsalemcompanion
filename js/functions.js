@@ -277,7 +277,7 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             } else if(!any){
                 target = "Any";
                 any = true;
-            }
+            }   
             strikeThrough(target);
         } else if($.inArray(text, TownKilling) > -1){
             if(text == "Veteran")
@@ -523,10 +523,57 @@ $(document).ready(function()
                         }
                         break;
                 }
-            }
-            else
-            {
+            } else {
                 $(this).css('textDecoration', 'line-through');
+                switch($(this).text()){
+                    case "Jailor":
+                        jailor = true;
+                        break;
+                    case "Town Investigative":
+                        if($(this).attr("id") == "towninvest"){
+                            towninvest = true;
+                        } else if($(this).attr("id") == "towninvest1"){
+                            towninvest1 = true;
+                        }
+                        break;
+                    case "Town Support":
+                        if($(this).attr("id") == "townsupport"){
+                            townsupport = true;
+                        } else if($(this).attr("id") == "townsupport1"){
+                            townsupport1 = true;
+                        }
+                        break;
+                    case "Town Protective":
+                        townprotect = true;
+                        break;
+                    case "Town Killing":
+                        townkill = true;
+                        break;
+                    case "Random Town":
+                        randomtown = true;
+                        break;
+                    case "Godfather":
+                        godfather = true;
+                        break;
+                    case "Mafioso":
+                        mafioso = true;
+                        break;
+                    case "Random Mafia":
+                        randommaf = true;
+                        break;
+                    case "Neutral Killing":
+                        neutralkill = true;
+                        break;
+                    case "Neutral Evil":
+                        neutralevil = true;
+                        break;
+                    case "Neutral Benign":
+                        neutralbenign = true;
+                        break;
+                    case "Any":
+                        any = true;
+                        break;
+                }
             }
         }
         else if(event.which == 3)
