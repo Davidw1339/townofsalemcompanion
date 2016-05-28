@@ -94,6 +94,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
             var random = Math.floor(Math.random() * numberOfWords) + 1;
             if(random != numberOfWords && random != 1){
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is the " + ordinalSuffix(random) + " word of your ability?</span><br>" +
@@ -103,6 +104,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
             } else if(random == numberOfWords){
                 var last = numberOfWords - 1;
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is the last word of your ability?</span><br>" +
@@ -111,6 +113,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 );
             } else {
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is the first word of your ability?</span><br>" +
@@ -123,6 +126,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
             var random = Math.floor(Math.random() * numberOfAttr) + 1;
             if(random != numberOfAttr && random != 1){
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is your " + ordinalSuffix(random) + " attribute?</span><br>" +
@@ -132,6 +136,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
             } else if(random == numberOfAttr){
                 var last = numberOfAttr - 1;
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is your last attribute?</span><br>" +
@@ -140,6 +145,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 );
             } else {
                 $("#questions").html("Role Name: " + foundRole[0].role + "<br>" +
+                "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
                 "Question: <span class='copyques'>What is your first attribute?</span><br>" +
