@@ -97,6 +97,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is the " + ordinalSuffix(random) + " word of your ability?</span><br>" +
                 "Answer: " + wordsArray[random - 1] + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
@@ -107,6 +108,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is the last word of your ability?</span><br>" +
                 "Answer: " + wordsArray[last] + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
@@ -116,6 +118,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is the first word of your ability?</span><br>" +
                 "Answer: " + wordsArray[0] + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
@@ -129,6 +132,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is your " + ordinalSuffix(random) + " attribute?</span><br>" +
                 "Answer: " + attr[random - 1].attr + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
@@ -139,6 +143,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is your last attribute?</span><br>" +
                 "Answer: " + attr[last].attr + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"
@@ -148,6 +153,7 @@ function updateQuestionFilteredList(matches) //makes change to list of rolez to 
                 "Alignment/Category: " + foundRole[0].alignment + "<br>" +
                 "Abilities: " + foundRole[0].abilities + "<br>" +
                 "Attributes: " + attributes +
+                "Goal: " + foundRole[0].goal + "<br>" +
                 "Question: <span class='copyques'>What is your first attribute?</span><br>" +
                 "Answer: " + attr[0].attr + "<br>" +
                 "<button class='btn btn-success' id='copyButton'>Copy Question</button>"

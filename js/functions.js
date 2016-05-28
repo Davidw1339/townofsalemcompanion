@@ -277,7 +277,7 @@ function updateFilteredList(matches) //makes change to list of roles to click on
             } else if(!any){
                 target = "Any";
                 any = true;
-            }   
+            }
             strikeThrough(target);
         } else if($.inArray(text, TownKilling) > -1){
             if(text == "Veteran")
