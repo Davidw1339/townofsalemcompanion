@@ -137,6 +137,7 @@ function strikeThrough(target){
         text1 = $(this).text();
         if(text1 == target && $(this).css('textDecoration') != 'line-through'){
            $(this).css('textDecoration', 'line-through');
+           $(this).css('color', '#df691a');
            return false;
         }
     });
@@ -149,7 +150,7 @@ function updateFilteredList(matches) //makes change to list of roles to click on
     {
         $("#rolelist").append("<span class = 'filteredrole'>" + role + "</span><br>");
     });
-    
+
     $(".filteredrole").click(function(){
         var text = $(this).text();
         var text1, target;
@@ -395,20 +396,21 @@ function updateFilteredList(matches) //makes change to list of roles to click on
         $("#filter").val("");
         updateFilteredList(roles);
     });
-    
+
 }
 
-$(document).ready(function() 
+$(document).ready(function()
 {
     updateFilteredList(roles);
-    $(".role").mousedown(function(event) 
+    $(".role").mousedown(function(event)
     {
         if(event.which == 1)
         {
             if($(this).css('textDecoration') == 'line-through')
             {
                 $(this).css('textDecoration', 'none');
-                
+                $(this).css('color', '#ebebeb');
+
                 switch($(this).text()){
                     case "Jailor":
                         jailor = false;
@@ -525,6 +527,7 @@ $(document).ready(function()
                 }
             } else {
                 $(this).css('textDecoration', 'line-through');
+                $(this).css('color', '#df691a');
                 switch($(this).text()){
                     case "Jailor":
                         jailor = true;
@@ -585,9 +588,9 @@ $(document).ready(function()
                    .attr('data-original-title', window.prompt("Create Note", origTooltip))
                    .tooltip('fixTitle')
                    .tooltip('show');
-            
+
         }
-        
+
     });
 
     $("#filter").on('input', function() //check for changes in filter
@@ -610,5 +613,5 @@ $(document).ready(function()
 
 
 
-    
+
 });
