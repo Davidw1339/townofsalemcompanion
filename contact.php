@@ -17,7 +17,7 @@
             $result="<div class='alert alert-danger'><strong>There were error(s) with your form:</strong> $error</div>";
         }   
         else{
-            if(mail("contact@salemcompanion.com", "Comment From Town of Salem Companion", "Name: ".$_POST["name"]."
+            if(mail("salemcompanion@gmail.com", "Comment From Town of Salem Companion", "Name: ".$_POST["name"]."
             
             Email: ".$_POST["email"]."
             
@@ -105,7 +105,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="rankedpractice.html">Ranked Practice</a></li>
-                        <li><a href="extensions.html">Extensions</a></li>
                         <li class="active"><a href="contact.php">Contact Us</a></li>
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="privacypolicy.html">Privacy Policy</a></li>    
@@ -145,5 +144,20 @@
             </div>
         </div>
     </body>
+    
+    <div align="center">
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Salem Companion -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2083646110024144"
+         data-ad-slot="1395350112"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+    </div>
     
 </html>
